@@ -1,89 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Internship & Work Experience Finder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Arleta Internships</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="container header-content">
-      <h1 tabindex="0">Internship &amp; Work Experience Finder</h1>
-      <p class="intro" tabindex="0">
-        Discover paid jobs, internships, and volunteer opportunities for students in Pacoima, Arleta, Sylmar, Northridge, LA SFV, and remote. Filter, search, and find your next step.
-      </p>
+  <header class="site-header">
+    <div class="container">
+      <h1>Arleta Internships</h1>
+      <p class="lede">A curated, accessible listing of local internships and opportunities.</p>
     </div>
   </header>
-  <main class="container" id="main-content">
-    <section aria-label="Search and filters" class="filter-section">
-      <form id="filter-form" autocomplete="off">
-        <label for="search" class="sr-only">Search internships</label>
-        <input type="search" id="search" name="search" placeholder="Search by role, organization, or notes" aria-label="Search internships">
 
+  <main class="container">
+    <form id="controls" class="controls" aria-label="Search and filter internships">
+      <div class="control-row">
+        <label for="search">Search</label>
+        <input id="search" name="search" type="search" placeholder="Search title, organization, notes" aria-label="Search internships">
+
+        <label for="sort">Sort</label>
+        <select id="sort" name="sort" aria-label="Sort internships">
+          <option value="az">A — Z (Title)</option>
+          <option value="deadline">Soonest Deadline</option>
+        </select>
+      </div>
+
+      <div class="control-row">
         <label for="location">Location</label>
-        <select id="location" name="location">
-          <option value="">All Locations</option>
-          <option>Pacoima</option>
-          <option>Arleta</option>
-          <option>Sylmar</option>
-          <option>Northridge</option>
-          <option>LA SFV</option>
-          <option>Los Angeles</option>
-          <option>Remote</option>
-          <option>California</option>
+        <select id="location" name="location" aria-label="Filter by location">
+          <option value="">Any</option>
         </select>
 
-        <label for="paytype">Type</label>
-        <select id="paytype" name="paytype">
-          <option value="">All Types</option>
+        <label for="pay">Pay</label>
+        <select id="pay" name="pay" aria-label="Filter by pay">
+          <option value="">Any</option>
           <option value="paid">Paid</option>
-          <option value="volunteer">Volunteer</option>
-          <option value="internship">Internship</option>
-          <option value="training">Training</option>
+          <option value="unpaid">Unpaid/Volunteer</option>
         </select>
 
         <label for="remote">Remote</label>
-        <select id="remote" name="remote">
+        <select id="remote" name="remote" aria-label="Filter by remote or onsite">
           <option value="">Any</option>
           <option value="yes">Remote</option>
-          <option value="no">On-site</option>
+          <option value="no">Onsite</option>
         </select>
 
-        <label for="deadline">Deadline Month</label>
-        <select id="deadline" name="deadline">
-          <option value="">Any Month</option>
-          <option value="01">January</option>
-          <option value="02">February</option>
-          <option value="03">March</option>
-          <option value="04">April</option>
-          <option value="05">May</option>
-          <option value="06">June</option>
-          <option value="07">July</option>
-          <option value="08">August</option>
-          <option value="09">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
+        <label for="deadline-month">Deadline month</label>
+        <select id="deadline-month" name="deadline-month" aria-label="Filter by deadline month">
+          <option value="">Any</option>
         </select>
-
-        <label for="sort">Sort</label>
-        <select id="sort" name="sort">
-          <option value="az">A–Z</option>
-          <option value="deadline">Soonest Deadline</option>
-        </select>
-      </form>
-    </section>
-    <section aria-label="Internship listings" id="internship-section">
-      <div id="internship-list" class="internship-grid" aria-live="polite"></div>
-      <div id="empty-state" class="empty-state" hidden>
-        <p>No internships match your filters. Try adjusting your search or filters.</p>
       </div>
+    </form>
+
+    <section id="results" class="grid" aria-live="polite" aria-label="Internship results">
+      <!-- cards rendered here -->
     </section>
   </main>
-  <footer class="site-footer" role="contentinfo">
-    <p>From Arleta High School, Made by Maycoly</p>
+
+  <footer class="site-footer">
+    From Arleta High School, Made by Maycoly.
   </footer>
-  <script src="script.js"></script>
+
+  <script defer src="internships.js"></script>
+  <script defer src="script.js"></script>
 </body>
 </html>
